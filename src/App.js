@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 //import FileUploader from './components/FileUploader';
-import './App.css'; //centers form and other content on page
+import './App.css'; //centers content on page
+import { Button } from 'atomize'; //if this throws an error re: styletron-react, install that manually
+import logo from './logo.png';
+import sitename from './sitename.png';
 
 const App = () => {
   
@@ -26,6 +29,8 @@ const App = () => {
 
   return (
     <div className="App">
+    <header className="App-header">
+      <img src={sitename} className="App-logo" alt="eduwire" />
       <form>
         <input 
           type="text"
@@ -58,6 +63,8 @@ const App = () => {
         <br />
         <button onClick={submitForm}>Submit</button>
       </form>
+      <img src={logo} className="App-logo" alt="logo" />
+      </header>
     </div>
   );
 }
