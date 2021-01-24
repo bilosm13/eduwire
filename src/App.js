@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 //import FileUploader from './components/FileUploader';
 import './App.css'; //centers content on page
-import { Button } from 'atomize'; //if this throws an error re: styletron-react, install that manually
+//import { Button } from 'atomize'; //if this throws an error re: styletron-react, install that manually
 import logo from './logo.png';
 import sitename from './sitename.png';
 
