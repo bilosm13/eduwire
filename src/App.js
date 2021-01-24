@@ -3,20 +3,25 @@ import React, { useState } from 'react';
 import './App.css'; //centers form and other content on page
 
 const App = () => {
-  const [name, setName] = useState("");
+  
+  const [fname, setfName] = useState("");
+  const [lname, setlName] = useState("");
+  const [pron, setPron] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
 
   const submitForm = () =>{
     const formData = new FormData();
-    formData.append("name", name);
+    formData.append("fname", fname);
+    formData.append("lname", lname);
+    formData.append("pronoun", pron);
     formData.append("file", selectedFile);
 
     //axios //this is for uploading your information to a specific address/server/website using axios
       //.post(UPLOAD_URL, formData)
       //.then((res) => {
-        //alert("File Upload Success");
+        //alert("Submission Success");
      // })
-      //.catch((err) => alert("File Upload Error"));
+      //.catch((err) => alert("Submission Error"));
   };
 
   return (
@@ -24,19 +29,33 @@ const App = () => {
       <form>
         <input 
           type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)} 
+          id="first"
+          value={fname}
+          onChange={(e) => setfName(e.target.value)} 
         />
-
-        <input
-          type="file"
-          value={selectedFile}
-          onChange={(e) => setSelectedFile(e.target.files[0])}
+        <input 
+          type="text"
+          id="last"
+          value={lname}
+          onChange={(e) => setlName(e.target.value)} 
+        />
+        <br />
+        <input 
+          type="text"
+          id="pronouns"
+          value={pron}
+          onChange={(e) => setPron(e.target.value)} 
+        />
+        <br />
+      <input
+        type="file"
+        value={selectedFile}
+        onChange={(e) => setSelectedFile(e.target.files[0])}
         //FileUploader //this is a separate component that I can't get to work
           //onFileSelectSuccess={(file) => setSelectedFile(file)}
           //onFileSelectError={({ error }) => alert(error)}
         />
-
+        <br />
         <button onClick={submitForm}>Submit</button>
       </form>
     </div>
